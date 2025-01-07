@@ -16,8 +16,3 @@ async def start(message: types.Message):
 @cmd_router.message(Command('about'))
 async def start(message: types.Message):
     await message.answer(get_str('texts/about.txt'), parse_mode=ParseMode.MARKDOWN)
-
-
-@cmd_router.message(Command('wtf'))
-async def start(message: types.Message):
-    await message.answer(get_str('texts/wtf.txt'), parse_mode=ParseMode.MARKDOWN)

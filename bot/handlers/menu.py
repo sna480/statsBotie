@@ -1,23 +1,20 @@
 from aiogram import Router, F, types
 
+from texts.get_str import get_str
+
 menu_router = Router()
 
 
-@menu_router.message(F.text == 'Гугл')
+@menu_router.message(F.text == get_str('texts/buttons/google.txt'))
 async def feedback(message: types.Message):
-    await message.answer('*инфа про гугл*')
+    await message.answer(get_str('texts/info/google.txt'))
 
 
-@menu_router.message(F.text == 'Яндекс')
+@menu_router.message(F.text == get_str('texts/buttons/yandex.txt'))
 async def feedback(message: types.Message):
-    await message.answer('я им не пользуюсь..')
+    await message.answer(get_str('texts/info/yandex.txt'))
 
 
-@menu_router.message(F.text == 'ВК 😭')
+@menu_router.message(F.text == get_str('texts/buttons/vk.txt'))
 async def feedback(message: types.Message):
-    await message.answer('раньше классно было, щас хочу аккаунт снести')
-
-
-@menu_router.message(F.text == 'Хром?..')
-async def feedback(message: types.Message):
-    await message.answer('._.')
+    await message.answer(get_str('texts/info/vk.txt'))
